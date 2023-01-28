@@ -9,7 +9,7 @@ function Form({ tipo }) {
 
   const options = {
     name: { titulo: 'Nombre de usuario', type: 'text' },
-    email: { titulo: 'Direccion de correo electronico', type: 'mail' },
+    email: { titulo: 'Direccion de correo electronico', type: 'email' },
     password: { titulo: 'Contraseña', type: 'password' },
   }
 

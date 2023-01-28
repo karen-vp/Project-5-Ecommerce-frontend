@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import {Routes, Route} from 'react-router-dom'
 import Layout from './components/shared/Layout'
@@ -19,9 +19,9 @@ function App() {
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/catalog' element={<Catalog/>}/>
+          <Route path='/checkout' element={<Checkout/>}/>
           <Route element={<PrivateRoute/>}>
             <Route path='/profile' element={<Profile/>}/>
-            <Route path='/checkout' element={<Checkout/>}/>
           </Route>
           <Route path='*' element={<NoPage/>}/>
 
