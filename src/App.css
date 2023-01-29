@@ -326,3 +326,18 @@ button[type=submit] {
     border-radius: 4px;
     cursor: pointer;
 }
+
+/*Componente Catalog*/
+
+.product-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+  padding: 15px;
+}
+
+.page-subtitle{
+  text-align: center;
+}
