@@ -5,7 +5,7 @@ import App from './App';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
-// import { GlobalProvider } from './context/globalContext'
+import { AppProvider } from './context/globalContext'
 import { UserProvider } from './context/userContext'
 
 
@@ -13,13 +13,15 @@ import { UserProvider } from './context/userContext'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+
     <UserProvider>
-        {/* <GlobalProvider> */}
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        {/* </GlobalProvider>*/}
-    </UserProvider> 
+      <AppProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </AppProvider>
+    </UserProvider>
+
 
   </React.StrictMode>
 );

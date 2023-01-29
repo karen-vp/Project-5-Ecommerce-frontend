@@ -19,8 +19,12 @@ function Header() {
             </li>
             {authStatus ? (
               <>
+                <Link to='/profile' className='link-item'>Profile</Link>
                 <Link to='/' onClick={logout} className='link-item'>Cerrar sesión</Link>
-              </>) : (<>
+              </>
+            )
+
+              : (<>
                 <li>
                   <Link to='login' className='link-item'>Login</Link>
                 </li>

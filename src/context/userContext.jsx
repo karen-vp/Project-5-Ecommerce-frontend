@@ -69,6 +69,7 @@ export const UserProvider = ({ children }) => {
     setAuthStatus(false)
   }
 
+
   const data = {
     registerUser, 
     loginUser, 
@@ -82,6 +83,7 @@ export const UserProvider = ({ children }) => {
     error,
     setSuccess,
     setError,
+    setUser,
   }
   console.log('User Context', data)
   return <UserContext.Provider value={data}>{children}</UserContext.Provider>
