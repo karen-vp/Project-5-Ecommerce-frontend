@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { AppContext } from './../../context/globalContext'
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
+// import Card from 'react-bootstrap/Card';
+// import ListGroup from 'react-bootstrap/ListGroup';
 
 function Catalog() {
   const { product, getProduct, success } = useContext(AppContext)
