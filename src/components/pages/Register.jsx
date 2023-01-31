@@ -14,31 +14,33 @@ function Register() {
         registerUser(formData)
         event.target.reset();
     }
-   
+
 
     return (
-        <div className='container-sm'>
-            <h2>Crear cuenta</h2>
+        <div className='center-container'>
+            <div className='form-container'>
+                <h2>Crear cuenta</h2>
 
-            <form onSubmit={(e) => sendData(e)}>
-                <Form tipo='name' />
-                <Form tipo='email' />
-                <Form tipo='password' />
+                <form onSubmit={(e) => sendData(e)}>
+                    <Form tipo='name' />
+                    <Form tipo='email' />
+                    <Form tipo='password' />
 
-                <button type='submit'>
-                    Registrarme
-                </button>
-            </form>
-            {success &&(
-                 <div className='alert alert-success m4' role='alert'>
-                    Se registro usuario con exito
-                </div>
-            ) }
-            {error && (
-                <div className='alert alert-danger m4' role='alert'>
-                    Hubo un error creando usuario
-                </div>
-            )}
+                    <button type='submit'>
+                        Registrarme
+                    </button>
+                </form>
+                {success && (
+                    <div className='alert alert-success m4' role='alert'>
+                        Se registro usuario con exito
+                    </div>
+                )}
+                {error && (
+                    <div className='alert alert-danger m4' role='alert'>
+                        Hubo un error creando usuario
+                    </div>
+                )}
+            </div>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import '../../App.css';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Navigate, Link} from 'react-router-dom'
 import { UserContext } from './../../context/userContext'
 import Form from './../shared/Form'
 
@@ -14,7 +14,7 @@ function Login() {
     verifyingToken()
 
     if (authStatus) {
-      navigate('/profile')
+      navigate('../ecommerce-ropa-frontend/profile')
     }
   }, [authStatus])
 
@@ -25,18 +25,24 @@ function Login() {
     loginUser(formData)
   }
 
-  return (
-    <div className='container-sm'>
-      <h2>Iniciar sesión</h2>
+  const onNavigate = (history, locationDescriptor)=>history.replace(locationDescriptor)
 
-      <form onSubmit={(e) => sendData(e)}>
-        <Form tipo='email' />
-        <Form tipo='password' />
-        <button type='submit' className=''>
-          Comenzar
-        </button>
-      </form>
+  return (
+    <div className='center-container'>
+      <div className='form-container'>
+        <h2>Iniciar sesión</h2>
+        <form onSubmit={(e) => sendData(e)}>
+          <Form tipo='email' />
+          <Form tipo='password' />
+          <button type='submit' className=''>
+            Comenzar
+          </button>
+        </form>
+        <span>No eres un miembro todavía?</span>
+        <Link to='../ecommerce-ropa-frontend/register' className='link-item link-pop' replace>Regístrate</Link>
+      </div>
     </div>
+
   )
 }
 

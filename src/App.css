@@ -294,15 +294,41 @@ h2 {
   }
 }
 
+.center-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  margin-bottom: 100px;
+}
+
+.form-container{
+  width: 450px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  gap: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.link-pop{
+  color:lightseagreen;
+}
+
+.card-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 
 /*FORM*/
 
 form{
-	width:500px;
-	padding:16px;
+	width:80%;
 	border-radius:10px;
-	margin:20px;
-	background-color:#ccc;
 
 }
 form input[type=email],
@@ -318,7 +344,7 @@ input[type=password]
 }
 
 button[type=submit]{
-    width: auto;
+    width: 100%;
     background-color:black;
     color: white;
     padding: 14px 20px;
@@ -336,6 +362,18 @@ button[type=submit]{
     border: none;
     font-size: small;
     border-radius: 4px;
+}
+
+/*Componente Product*/
+.default-container{
+ padding: 45px;
+ 
+}
+
+/*Componente Profile*/
+
+.center-title{
+  text-align: center;
 }
 
 /*Componente Catalog*/

@@ -9,6 +9,7 @@ import Register from './components/pages/Register'
 import Catalog from './components/pages/Catalog'
 import Checkout from './components/pages/Checkout'
 import NoPage from './components/pages/NoPage'
+import Product from './components/shared/Product'
 import PrivateRoute from './components/auth/PrivateRoute'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='/ecommerce-ropa-frontend/login' element={<Login/>}/>
           <Route path='/ecommerce-ropa-frontend/catalog' element={<Catalog/>}/>
           <Route path='/ecommerce-ropa-frontend/checkout' element={<Checkout/>}/>
+          <Route path='/ecommerce-ropa-frontend/:id' element={<Product/>}/>
           <Route element={<PrivateRoute/>}>
             <Route path='/ecommerce-ropa-frontend/profile' element={<Profile/>}/>
           </Route>

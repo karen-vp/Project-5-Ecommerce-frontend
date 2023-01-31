@@ -3,7 +3,7 @@ import { UserContext } from './../../context/userContext'
 
 
 function Profile() {
-  const { authStatus, user, verifyingToken } = useContext(UserContext)
+  const { authStatus, user, verifyingToken} = useContext(UserContext)
 
   useEffect(() => {
     verifyingToken()
@@ -11,13 +11,16 @@ function Profile() {
  
 
   return (
-    <div>
+    <div className='container-sm default-container'>
       {authStatus ? (<>
         <div>
-          <h1>Perfil</h1>
+          <h1 className='center-title'>Mi Perfil</h1>
 
-            <p>Nombre de usuario: {user.usuario.name}</p>
-            <p>Correo electronico: {user.usuario.email}</p>
+            <h3>Información</h3>
+            <p>Nombre de usuario:</p>
+            <input type="text" value={user.usuario.name}></input>
+            <p>Correo electronico:</p> 
+            <input type="text" value={user.usuario.email}></input>
  
 
         </div></>) : <div>

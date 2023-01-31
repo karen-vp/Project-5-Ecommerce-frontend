@@ -27,11 +27,26 @@ export const UserProvider = ({ children }) => {
     try {
       const res = await clienteAxios.post('/customers/signup', dataForm)
       // localStorage.setItem('token', res.data.token)
-      setAuthStatus(true)
+      // setAuthStatus(true)
       setSuccess(true)
     } catch (error) {
       console.log(error)
       setError(false)
+    }
+  }
+
+  const updateUser = async (id, dataForm)=>{
+    const form = {
+      id,
+      name : dataForm.name,
+      email : dataForm.email
+    }
+    try {
+      const res = await clienteAxios.put('/customers/update', form)
+      verifyingToken()
+
+    } catch (error) {
+      console.log(error)
     }
   }
 
@@ -84,6 +99,7 @@ export const UserProvider = ({ children }) => {
     setSuccess,
     setError,
     setUser,
+    updateUser,
   }
   console.log('User Context', data)
   return <UserContext.Provider value={data}>{children}</UserContext.Provider>

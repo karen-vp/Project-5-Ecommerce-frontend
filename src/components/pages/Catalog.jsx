@@ -27,10 +27,13 @@ function Catalog() {
                 <Card.Title>{item.name}</Card.Title>
                 <Card.Text>{item.description}</Card.Text>
               </Card.Body>
-              <ListGroup classname="list-group-flush">
+              <ListGroup className="list-group-flush">
                 <ListGroup.Item>Marca: {item.brand}</ListGroup.Item>
                 <ListGroup.Item>${item.price}</ListGroup.Item>
-                <ListGroup.Item><button className='btn-main'>Agregar al carrito</button></ListGroup.Item>
+                <Card.Body className='card-content'>
+                <Card.Link href={`../ecommerce-ropa-frontend/${item._id}`}>Ver producto</Card.Link>
+                  <button className='btn-main'>Agregar al carrito</button>
+                </Card.Body>
               </ListGroup>
             </Card>
             )
