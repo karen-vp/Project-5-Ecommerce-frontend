@@ -17,7 +17,7 @@ function Register() {
    
 
     return (
-        <div>
+        <div className='container-sm'>
             <h2>Crear cuenta</h2>
 
             <form onSubmit={(e) => sendData(e)}>

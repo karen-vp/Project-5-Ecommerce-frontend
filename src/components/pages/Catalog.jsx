@@ -17,12 +17,12 @@ function Catalog() {
       <h2 className='page-subtitle'>Nuestros Productos</h2>
       <p className='page-subtitle'>Entre nuestras colecciones encontrarás desde los estilos más sofisticados hasta los más urbanos.</p>
 
-      <div className='product-container'>
+      <div className='product-container' fluid="md">
 
         {success ? (
           product.map((item, i) => {
             return (<Card style={{ width: '18rem' }}>
-              <Card.Img  variant="top" src={item.img} />
+              <Card.Img className='img-card' variant="top" src={item.img} />
               <Card.Body>
                 <Card.Title>{item.name}</Card.Title>
                 <Card.Text>{item.description}</Card.Text>
@@ -30,6 +30,7 @@ function Catalog() {
               <ListGroup classname="list-group-flush">
                 <ListGroup.Item>Marca: {item.brand}</ListGroup.Item>
                 <ListGroup.Item>${item.price}</ListGroup.Item>
+                <ListGroup.Item><button className='btn-main'>Agregar al carrito</button></ListGroup.Item>
               </ListGroup>
             </Card>
             )

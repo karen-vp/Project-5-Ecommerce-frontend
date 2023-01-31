@@ -294,6 +294,7 @@ h2 {
   }
 }
 
+
 /*FORM*/
 
 form{
@@ -316,7 +317,7 @@ input[type=password]
     border-radius: 4px  !important;
 }
 
-button[type=submit] {
+button[type=submit]{
     width: auto;
     background-color:black;
     color: white;
@@ -327,17 +328,34 @@ button[type=submit] {
     cursor: pointer;
 }
 
+.btn-main{
+    width: auto;
+    background-color:black;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: small;
+    border-radius: 4px;
+}
+
 /*Componente Catalog*/
 
 .product-container{
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
   align-content: center;
+  flex-flow: row wrap;
   gap: 20px;
-  padding: 15px;
+  padding: 45px;
+ 
 }
 
+.img-card{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
 .page-subtitle{
   text-align: center;
 }

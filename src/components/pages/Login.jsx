@@ -26,7 +26,7 @@ function Login() {
   }
 
   return (
-    <div className='container'>
+    <div className='container-sm'>
       <h2>Iniciar sesión</h2>
 
       <form onSubmit={(e) => sendData(e)}>
