@@ -31,7 +31,7 @@ function Catalog() {
                 <ListGroup.Item>Marca: {item.brand}</ListGroup.Item>
                 <ListGroup.Item>${item.price}</ListGroup.Item>
                 <Card.Body className='card-content'>
-                <Card.Link href={`../ecommerce-ropa-frontend/${item._id}`}>Ver producto</Card.Link>
+                <Card.Link href={`/${item._id}`}>Ver producto</Card.Link>
                   <button className='btn-main'>Agregar al carrito</button>
                 </Card.Body>
               </ListGroup>

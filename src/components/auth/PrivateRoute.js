@@ -12,5 +12,5 @@ export default function PrivateRoute(){
         verifyingToken()
     },[])
 
-    return authStatus ? <Outlet/> : <Navigate to='../ecommerce-ropa-frontend/login' replace/>
+    return authStatus ? <Outlet/> : <Navigate to='/login' replace/>
 }

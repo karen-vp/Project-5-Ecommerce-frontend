@@ -16,14 +16,14 @@ function App() {
   return (
       <Layout>
         <Routes>
-          <Route path='/ecommerce-ropa-frontend' element={<Home/>}/>
-          <Route path='/ecommerce-ropa-frontend/register' element={<Register/>}/>
-          <Route path='/ecommerce-ropa-frontend/login' element={<Login/>}/>
-          <Route path='/ecommerce-ropa-frontend/catalog' element={<Catalog/>}/>
-          <Route path='/ecommerce-ropa-frontend/checkout' element={<Checkout/>}/>
-          <Route path='/ecommerce-ropa-frontend/:id' element={<Product/>}/>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/register' element={<Register/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/catalog' element={<Catalog/>}/>
+          <Route path='/checkout' element={<Checkout/>}/>
+          <Route path='/:id' element={<Product/>}/>
           <Route element={<PrivateRoute/>}>
-            <Route path='/ecommerce-ropa-frontend/profile' element={<Profile/>}/>
+            <Route path='/profile' element={<Profile/>}/>
           </Route>
           <Route path='*' element={<NoPage/>}/>
 
