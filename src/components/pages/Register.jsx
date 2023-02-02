@@ -1,13 +1,18 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect} from 'react'
 import '../../App.css';
 import { UserContext } from './../../context/userContext'
-import Form from './../shared/Form'
+import FormInput  from '../shared/FormInput'
 
 
 function Register() {
     const userCtx = useContext(UserContext)
 
-    const { registerUser, formData, setFormData, success, error, setError, setSuccess } = userCtx
+    const { registerUser, formData, setFormData, success, error, setError, setSuccess, entryMode, setEntryMode } = userCtx
+
+    
+  useEffect(() => {
+    setEntryMode(true)
+  }, [])
 
     const sendData = (event) => {
         event.preventDefault()
@@ -22,9 +27,9 @@ function Register() {
                 <h2>Crear cuenta</h2>
 
                 <form onSubmit={(e) => sendData(e)}>
-                    <Form tipo='name' />
-                    <Form tipo='email' />
-                    <Form tipo='password' />
+                    <FormInput tipo='name' />
+                    <FormInput tipo='email' />
+                    <FormInput  tipo='password' />
 
                     <button type='submit'>
                         Registrarme

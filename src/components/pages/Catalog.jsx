@@ -5,13 +5,13 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 function Catalog() {
-  const { product, getProduct, success } = useContext(AppContext)
+  const productCtx =  useContext(AppContext)
+  const { product, getProduct, success } = productCtx
 
   useEffect(() => {
     getProduct()
   }, [])
-  console.log('front product')
-  console.log(product)
+ 
   return (
     <>
       <h2 className='page-subtitle'>Nuestros Productos</h2>

@@ -34,6 +34,7 @@ function Product() {
                 <p>{value.description}</p>
                 <p>Marca: {value.brand}</p>
                 <h3>${value.price}</h3>
+                <button className='btn-main'>Agregar al carrito</button>
               </div>
             ))) : null}
 

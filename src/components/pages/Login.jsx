@@ -2,19 +2,20 @@ import React, { useContext, useEffect } from 'react'
 import '../../App.css';
 import { useNavigate, Navigate, Link} from 'react-router-dom'
 import { UserContext } from './../../context/userContext'
-import Form from './../shared/Form'
+import FormInput  from './../shared/FormInput'
 
 function Login() {
   const userCtx = useContext(UserContext)
-  const { loginUser, authStatus, verifyingToken, formData } = userCtx
+  const { loginUser, authStatus, verifyingToken, formData, entrymode, setEntryMode } = userCtx
 
   const navigate = useNavigate()
 
   useEffect(() => {
+    setEntryMode(true)
     verifyingToken()
 
     if (authStatus) {
-      navigate('../ecommerce-ropa-frontend/profile')
+      navigate('/',{ replace: true })
     }
   }, [authStatus])
 
@@ -25,21 +26,19 @@ function Login() {
     loginUser(formData)
   }
 
-  const onNavigate = (history, locationDescriptor)=>history.replace(locationDescriptor)
-
   return (
     <div className='center-container'>
       <div className='form-container'>
         <h2>Iniciar sesión</h2>
         <form onSubmit={(e) => sendData(e)}>
-          <Form tipo='email' />
-          <Form tipo='password' />
+          <FormInput tipo='email' />
+          <FormInput tipo='password' />
           <button type='submit' className=''>
             Comenzar
           </button>
         </form>
         <span>No eres un miembro todavía?</span>
-        <Link to='../ecommerce-ropa-frontend/register' className='link-item link-pop' replace>Regístrate</Link>
+        <Link to='/register' className='link-item link-pop' replace>Regístrate</Link>
       </div>
     </div>
 

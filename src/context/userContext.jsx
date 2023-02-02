@@ -14,6 +14,13 @@ export const UserProvider = ({ children }) => {
     password: '',
 
   })
+  const [userData, setUserData] = useState({
+    name: '',
+    email: '',
+  })
+  const [editMode, setEditMode] = useState(false)
+  const [entryMode, setEntryMode] = useState(false)
+
 
   const handleChange = (event) => {
     event.preventDefault()
@@ -21,6 +28,13 @@ export const UserProvider = ({ children }) => {
       ...formData,
       [event.target.name]: event.target.value,
     })
+  }
+
+  const handleChangeUpdate = (event)=>{
+    event.preventDefault()
+    setUserData({ 
+      ...userData,
+      [event.target.name]: event.target.value, })
   }
 
   const registerUser = async (dataForm) => {
@@ -100,6 +114,13 @@ export const UserProvider = ({ children }) => {
     setError,
     setUser,
     updateUser,
+    editMode, 
+    setEditMode,
+    entryMode, 
+    setEntryMode,
+    userData, 
+    setUserData,
+    handleChangeUpdate
   }
   console.log('User Context', data)
   return <UserContext.Provider value={data}>{children}</UserContext.Provider>
