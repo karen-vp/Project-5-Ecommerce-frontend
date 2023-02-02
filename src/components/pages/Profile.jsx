@@ -34,8 +34,9 @@ function Profile() {
 
   useEffect(() => {
     verifyingToken()
-    setEditMode(false)
-  }, [])
+  },[editMode])
+
+  console.log('EDITMODE', editMode)
 
   return (
     <div className='container-sm default-container'>
