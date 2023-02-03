@@ -16,7 +16,7 @@ root.render(
 
     <UserProvider>
       <AppProvider>
-        <BrowserRouter>
+        <BrowserRouter basename='/ecommerce-ropa-frontend'>
           <PayPalScriptProvider option={{'client-id':process.env.PAYPAL_CLIENT_ID}}>
             <App />
           </PayPalScriptProvider>
