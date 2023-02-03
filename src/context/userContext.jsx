@@ -19,7 +19,6 @@ export const UserProvider = ({ children }) => {
     email: '',
   })
   const [editMode, setEditMode] = useState(false)
-  const [entryMode, setEntryMode] = useState(false)
 
 
   const handleChange = (event) => {
@@ -106,22 +105,21 @@ export const UserProvider = ({ children }) => {
     handleChange, 
     verifyingToken, 
     logout, 
+    setSuccess,
+    setError,
+    setUser,
+    updateUser,
+    setUserData,
+    handleChangeUpdate,
+    setEditMode,
     formData, 
     user, 
     authStatus, 
     success,
     error,
-    setSuccess,
-    setError,
-    setUser,
-    updateUser,
     editMode, 
-    setEditMode,
-    entryMode, 
-    setEntryMode,
     userData, 
-    setUserData,
-    handleChangeUpdate
+    
   }
   console.log('User Context', data)
   return <UserContext.Provider value={data}>{children}</UserContext.Provider>

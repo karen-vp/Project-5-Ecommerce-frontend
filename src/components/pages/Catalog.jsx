@@ -6,7 +6,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 function Catalog() {
   const productCtx =  useContext(AppContext)
-  const { product, getProduct, success } = productCtx
+  const { product, getProduct, success, addItemToCart } = productCtx
 
   useEffect(() => {
     getProduct()
@@ -32,7 +32,7 @@ function Catalog() {
                 <ListGroup.Item>${item.price}</ListGroup.Item>
                 <Card.Body className='card-content'>
                 <Card.Link href={`/${item._id}`}>Ver producto</Card.Link>
-                  <button className='btn-main'>Agregar al carrito</button>
+                  <button className='btn-main' onClick={()=>addItemToCart()}>Agregar al carrito</button>
                 </Card.Body>
               </ListGroup>
             </Card>

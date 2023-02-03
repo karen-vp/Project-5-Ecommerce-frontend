@@ -9,6 +9,28 @@ export const AppProvider = ({ children }) => {
   const [ok, setOk] = useState(false)
   const [oneProduct, setOneProduct] = useState({})
 
+  const [cart, setCart]= useState([])
+
+  const addItemToCart = (product)=>{
+    !product.quantity && (product.quantity=1)
+    const productInCart = cart.find((item)=> item.id === product.id);
+    console.log('SE ENCONTRO EL PRODUCTO EN EL CARRITO',productInCart)
+    if(productInCart){
+      const newCart = cart.map((item)=>{
+        if(item.id === product.id){
+          return{
+            ...item,
+            quantity: item.quantity + 1,
+          };
+        }
+        return item;
+      })
+      setCart(newCart);
+      return;
+    }
+    setCart([...cart, product]);
+  }
+
   const getProduct = async () => {
     try {
       const res = await clienteAxios.get('/products/list')
@@ -42,6 +64,11 @@ export const AppProvider = ({ children }) => {
     setOneProduct,
     ok, 
     setOk,
+    cart, 
+    setCart,
+    cart,
+    setCart,
+    addItemToCart
 
   }
 

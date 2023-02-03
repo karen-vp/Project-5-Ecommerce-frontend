@@ -1,17 +1,16 @@
 import React, { useContext, useEffect } from 'react'
 import '../../App.css';
-import { useNavigate, Navigate, Link} from 'react-router-dom'
+import { useNavigate, Link} from 'react-router-dom'
 import { UserContext } from './../../context/userContext'
 import FormInput  from './../shared/FormInput'
 
 function Login() {
   const userCtx = useContext(UserContext)
-  const { loginUser, authStatus, verifyingToken, formData, entrymode, setEntryMode } = userCtx
+  const { loginUser, authStatus, verifyingToken, formData} = userCtx
 
   const navigate = useNavigate()
 
   useEffect(() => {
-    setEntryMode(true)
     verifyingToken()
 
     if (authStatus) {

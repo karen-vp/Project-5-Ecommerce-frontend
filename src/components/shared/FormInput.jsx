@@ -5,7 +5,7 @@ import { UserContext } from '../../context/userContext'
 function Form({ tipo, value}) {
   const userCtx = useContext(UserContext)
 
-  const { handleChange, editMode, entryMode, handleChangeUpdate } = userCtx
+  const { handleChange, editMode, handleChangeUpdate } = userCtx
 
   const options = {
     name: { titulo: 'Nombre de usuario', type: 'text' },

@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import bootstrap from 'bootstrap/dist/css/bootstrap.css';
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
 import { AppProvider } from './context/globalContext'
 import { UserProvider } from './context/userContext'
-
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,7 +17,9 @@ root.render(
     <UserProvider>
       <AppProvider>
         <BrowserRouter>
-          <App />
+          <PayPalScriptProvider option={{'client-id':process.env.PAYPAL_CLIENT_ID}}>
+            <App />
+          </PayPalScriptProvider>
         </BrowserRouter>
       </AppProvider>
     </UserProvider>

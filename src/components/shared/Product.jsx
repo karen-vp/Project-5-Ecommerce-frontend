@@ -9,15 +9,11 @@ function Product() {
   const { getId, oneProduct, setOneProduct, ok } = useContext(AppContext)
 
   const { id } = useParams()
-  console.log(`Parametros: ${id}`)
 
   useEffect(() => {
-
     getId(id)
   }, [])
 
-  console.log(oneProduct)
-  console.log(ok)
   return (
     <div className="default-container">
       <Container fluid="md" >

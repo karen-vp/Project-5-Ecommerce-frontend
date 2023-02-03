@@ -7,12 +7,7 @@ import FormInput  from '../shared/FormInput'
 function Register() {
     const userCtx = useContext(UserContext)
 
-    const { registerUser, formData, setFormData, success, error, setError, setSuccess, entryMode, setEntryMode } = userCtx
-
-    
-  useEffect(() => {
-    setEntryMode(true)
-  }, [])
+    const { registerUser, formData, success, error} = userCtx
 
     const sendData = (event) => {
         event.preventDefault()
