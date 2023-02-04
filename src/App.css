@@ -394,6 +394,11 @@ button[type=submit], .btn-main{
   height: 300px;
   object-fit: cover;
 }
+
+/* .card{
+  width: 300px;
+  color: green;
+} */
 .page-subtitle{
   text-align: center;
 }

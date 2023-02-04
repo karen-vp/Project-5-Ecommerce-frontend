@@ -2,9 +2,8 @@ import React, { useContext } from 'react'
 import '../../App.css';
 import { UserContext } from '../../context/userContext'
 
-function Form({ tipo, value}) {
+function FormInput({ tipo, value}) {
   const userCtx = useContext(UserContext)
-
   const { handleChange, editMode, handleChangeUpdate } = userCtx
 
   const options = {
@@ -31,4 +30,4 @@ function Form({ tipo, value}) {
     </>
   )
 }
-export default Form
+export default FormInput

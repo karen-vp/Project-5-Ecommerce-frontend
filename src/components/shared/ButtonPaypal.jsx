@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect } from "react";
 import {
     PayPalButtons,
     usePayPalScriptReducer
 } from "@paypal/react-paypal-js";
+import { CartContext } from '../../context/cartProvider';
 
 // This values are the props in the UI
 
@@ -12,6 +13,9 @@ const style = { "layout": "vertical" };
 
 
 function ButtonPaypal({ currency, showSpinner, amount }) {
+    const checkoutCtx = useContext(CartContext)
+    const {setCart } = checkoutCtx
+
 
     const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
 
@@ -53,6 +57,7 @@ function ButtonPaypal({ currency, showSpinner, amount }) {
             onApprove={function (data, actions) {
                 return actions.order.capture().then(function () {
                     // Your code here after capture the order
+                    setCart([])
                 });
             }}
         />

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import '../../App.css';
 
 function Footer() {
@@ -6,48 +7,48 @@ function Footer() {
     <>
      <div className="gridfooter-container">
             <div className="griditem-1">
-                <a href="">
+                <Link to={'/'}>
                   {/* <img src="" alt="facebook" className="social-icons"> */}
-                </a>
-                <a href="">
+                </Link>
+                <Link to={'/'}>
                     {/* <img src="" alt="instagram" className="social-icons"> */}
-                 </a>
-                 <a href="">
+                 </Link>
+                 <Link to={'/'}>
                     {/* <img src="" alt="twitter" className="social-icons"> */}
-                </a>
-                <a href="">
+                </Link>
+                <Link to={'/'}>
                     {/* <img src="" alt="github" className="social-icons"> */}
-                </a>
+                </Link>
             </div>
             <div className="griditem-2">
                 <h4 className="title-links">PRODUCTOS</h4>
-                <a href="" className="footer-links">
+                <Link to={'/'} className="footer-links">
                     Menú
-                </a>
+                </Link>
             </div>
             <div className="griditem-3">
                 <h4 className="title-links">SOPORTE</h4>
                 <ul className="footer-list">
-                    <li><a href="" className="footer-links">Precios y cotizaciones</a> </li>
-                    <li><a href="" className="footer-links">FAQ</a></li>
-                    <li><a href="" className="footer-links">Guías</a></li>
+                    <li><Link to={'/'} className="footer-links">Precios y cotizaciones</Link> </li>
+                    <li><Link to={'/'} className="footer-links">FAQ</Link></li>
+                    <li><Link to={'/'} className="footer-links">Guías</Link></li>
                 </ul>
             </div>
             <div className="griditem-4">
                 <h4 className="title-links">NOSOTROS</h4>
                 <ul className="footer-list">
-                    <li><a href="" className="footer-links">Acerca de</a> </li>
-                    <li><a href="" className="footer-links">Blog</a></li>
-                    <li><a href="" className="footer-links">Trabajos</a></li>
-                    <li><a href="" className="footer-links">Prensa</a></li>
-                    <li><a href="" className="footer-links">Socios</a></li>
+                    <li><Link to={'/'} className="footer-links">Acerca de</Link> </li>
+                    <li><Link to={'/'} className="footer-links">Blog</Link></li>
+                    <li><Link to={'/'} className="footer-links">Trabajos</Link></li>
+                    <li><Link to={'/'} className="footer-links">Prensa</Link></li>
+                    <li><Link to={'/'} className="footer-links">Socios</Link></li>
                 </ul>
             </div>
             <div className="griditem-5">
                 <h4 className="title-links">LEGAL</h4>
                 <ul className="footer-list">
-                    <li><a href="" className="footer-links">Privacidad</a> </li>
-                    <li><a href="" className="footer-links">Términos y Condiciones</a></li>
+                    <li><Link to={'/'} className="footer-links">Privacidad</Link> </li>
+                    <li><Link to={'/'} className="footer-links">Términos y Condiciones</Link></li>
                     
                 </ul>
             </div>

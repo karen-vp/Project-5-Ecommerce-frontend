@@ -36,8 +36,6 @@ function Profile() {
     verifyingToken()
   },[editMode])
 
-  console.log('EDITMODE', editMode)
-
   return (
     <div className='container-sm default-container'>
       {authStatus ? (<>

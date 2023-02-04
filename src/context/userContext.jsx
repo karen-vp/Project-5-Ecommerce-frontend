@@ -75,7 +75,6 @@ export const UserProvider = ({ children }) => {
     try {
       const res = token && (await clienteAxios.get('/customers/verify'))
       setUser(res.data)
-      console.log('VERIFYTOKEN', res.data)
       setAuthStatus(true)
     } catch (error) {
       console.log('Error Verificando token', error)
@@ -121,7 +120,6 @@ export const UserProvider = ({ children }) => {
     userData, 
     
   }
-  console.log('User Context', data)
   return <UserContext.Provider value={data}>{children}</UserContext.Provider>
 }
 
