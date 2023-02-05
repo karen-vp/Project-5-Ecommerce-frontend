@@ -1,3 +1,15 @@
+#Descripción del proyecto
+
+
+Spanish/Español
+
+Este proyecto es una ecommerce de ropa unisex, la cual contiene una landing page, una sección de catalogo de productos, y cada producto se puede visualizar individualmente, una sección para iniciar sesión y para que los usuarios se registren, también incluye un carrito de compras y una pasarela de paypal para realizar compras.
+
+English/Ingles
+
+This project is a Clothing Ecommerce web page, which includes a landing page, a catalog section, an individual product section, a log in and sign up section, a cart checkout section and a paypal component to pay the products.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
