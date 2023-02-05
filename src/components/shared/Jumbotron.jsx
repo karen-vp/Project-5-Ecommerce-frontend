@@ -7,10 +7,10 @@ function Jumbotron() {
         <div className='jumbotron'>
             
             <div id='text-container'>
-                <h1>Encuentra tus atuendos favoritos</h1>
+                <h1 id='jumbotron-h1'>Donde puedes encontrar tus atuendos favoritos</h1>
                 <p className='text-2'>Entre nuestras colecciones encontrarás desde los estilos más sofisticados hasta los más urbanos.</p>
 
-                <button className='btn-main'><Link to='catalog' className='link-item text-1'>Compra ahora</Link></button>
+                <Link to='catalog' className='link-item text-1 btn-jumbo'>Compra ahora</Link>
 
             </div>
             <div>

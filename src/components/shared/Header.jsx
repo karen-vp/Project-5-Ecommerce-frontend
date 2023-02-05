@@ -13,32 +13,21 @@ function Header() {
       <header>
         <nav className='nav-menu'>
           <Link to='/'><img src={logo} alt="logo" id='logo' /></Link>
-          <ul className='ul-list'>
-            <li>
+            <div className='nav-row'>
               <Link to='/catalog' className='link-item'>Productos</Link>
-            </li>
-            {authStatus ? (
-              <>
-                <Link to='/profile' className='link-item'>Profile</Link>
-                <Link to='/' onClick={logout} className='link-item'>Cerrar sesión</Link>
-              </>
-            )
-
-              : (<>
-                <li>
+              {authStatus ? (
+                <>
+                  <Link to='/profile' className='link-item'>Profile</Link>
+                  <Link to='/' onClick={logout} className='link-item'>Cerrar sesión</Link>
+                </>
+              ) : (
+                <>
                   <Link to='/login' className='link-item'>Login</Link>
-                </li>
-                <li>
                   <Link to='/register' className='link-item btn-border'>Sign up</Link>
-                </li>
-              </>)}
-
-            <li>
+                </>
+              )}
               <Link to='/checkout'><img src={shopcart} alt="chcar" id='checkoutcar' className='icons' /></Link>
-            </li>
-          </ul>
-
-
+            </div>
         </nav>
       </header>
     </>

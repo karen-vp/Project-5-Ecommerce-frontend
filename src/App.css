@@ -1,5 +1,8 @@
 /*Global*/
-*{box-sizing:border-box;}
+* {
+  box-sizing: border-box;
+}
+
 /*Componente Layout*/
 .page-container {
   display: flex;
@@ -11,29 +14,19 @@
 
 /*Componente Header*/
 
-
 .nav-menu {
-  /* background-color: rgb(255, 182, 122); */
   background-color: white;
-  padding: 10px 160px 5px 160px;
+  padding: 10px 120px 5px 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.ul-list {
+.nav-row {
   gap: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.ul-list>li {
-  list-style: none;
-}
-
-.menuicon-container {
-  display: none;
 }
 
 .link-item {
@@ -41,34 +34,40 @@
   text-decoration: none;
 }
 
+.link-item:hover {
+  color: rgb(255, 125, 177)
+}
+
 #logo {
   width: 130px;
 }
 
-.icons{
+.icons {
   width: 30px;
 }
 
-.btn-border{
+.btn-border {
   border: solid 1px black;
   padding: 5px 15px;
   border-radius: 12px;
 }
 
+
+
 /*Vista para tabletas y telefonos*/
 @media only screen and (max-width: 768px) {
 
-  .ul-list {
-    display: none;
+   .nav-menu {
+    justify-content: center;
+    flex-flow: column;
+  } 
+
+  .nav-row{
+    flex-flow: column;
+    gap: 10px;
+    margin-bottom: 10px;
   }
 
-  .menuicon-container {
-    display: block;
-  }
-
-  img.menu-icon {
-    width: 24px;
-  }
 }
 
 
@@ -221,9 +220,8 @@ div.griditem-6 {
 /*Componente Jumbotron*/
 
 .jumbotron {
-
   padding: 60px;
-  gap: 50px;
+  gap: 20px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -233,18 +231,19 @@ div.griditem-6 {
 }
 
 #portadajumbo {
-
-  width: 600px;
-  border-radius: 15%;
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+  object-position: center;
 }
 
 #text-container {
-
-  width: 50%;
+  width: 40%;
   display: flex;
-  flex-direction: column;
+  gap: 20px;
+  flex-flow: column nowrap;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .text-1 {
@@ -252,9 +251,11 @@ div.griditem-6 {
   color: white;
 }
 
-h1 {
+h1#jumbotron-h1 {
+  text-align: left;
+  line-break: normal;
   margin-top: 0px;
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 h2 {
@@ -262,6 +263,7 @@ h2 {
 }
 
 .text-2 {
+  margin-bottom: 15px;
   width: 80%;
   font-size: 1.2em;
   text-align: justify;
@@ -278,23 +280,51 @@ h2 {
   border-radius: 30px;
 }
 
+.btn-jumbo {
+  width: 180px;
+  background-color: rgb(255, 91, 121);
+  margin: 15px 0 15px 0;
+  border: 0px;
+  font-size: 1.2em;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.sales-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sales-img{
+    width: 1300px;
+    width: 1300px;
+    object-fit: cover;
+}
+
 
 @media only screen and (max-width: 768px) {
 
   #portadajumbo {
-      width: 100%;
+    width: 100%;
   }
 
   #text-container {
-      width: 100%;
+    width: 100%;
   }
 
   .btn-main {
-      width: 100%;
+    width: 100%;
+  }
+
+  .sales-img{
+    width: 300px;
+    width: 300px;
+    object-fit: cover;
   }
 }
 
-.center-container{
+.center-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -302,7 +332,7 @@ h2 {
   margin-bottom: 100px;
 }
 
-.form-container{
+.form-container {
   width: 450px;
   padding: 30px;
   display: flex;
@@ -313,72 +343,104 @@ h2 {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.link-pop{
-  color:lightseagreen;
+.link-pop {
+  color: rgb(255, 125, 177);
 }
 
-.card-content{
+.card-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+@media only screen and (max-width: 768px) {
+  .form-container {
+    width: 80%;
+  }
+}
 
 /*FORM*/
 
-form{
-	width:80%;
-	border-radius:10px;
+form {
+  width: 80%;
+  border-radius: 10px;
 
 }
+
 form input[type=email],
 input[type=text],
-input[type=password]
-{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px  !important;
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px !important;
 }
 
-button[type=submit], .btn-main{
-    width: 100%;
-    background-color:black;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+button[type=submit],
+.btn-main {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.btn-main{
-    width: auto;
-    background-color:black;
-    color: white;
-    padding: 10px;
-    border: none;
-    font-size: small;
-    border-radius: 4px;
+.btn-main {
+  width: auto;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: small;
+  border-radius: 4px;
 }
 
 /*Componente Product*/
-.default-container{
- padding: 45px;
- 
+.default-container {
+  padding: 45px;
+
 }
 
 /*Componente Profile*/
 
-.center-title{
+.center-title {
   text-align: center;
 }
 
+/*COMPONENTE CATEGORIES*/
+.categories{
+  background-color: rgb(255, 220, 230);
+}
+.collections{
+  margin: 70px 0 50px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.img-collection{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 100px;
+}
+
+.child-collection{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    font-weight: bold;
+}
 /*Componente Catalog*/
 
-.product-container{
+.product-container {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -386,23 +448,19 @@ button[type=submit], .btn-main{
   flex-flow: row wrap;
   gap: 20px;
   padding: 45px;
- 
+
 }
 
-.img-card{
+.img-card {
   width: 300px;
   height: 300px;
   object-fit: cover;
 }
 
-/* .card{
-  width: 300px;
-  color: green;
-} */
-.page-subtitle{
+.page-subtitle {
   text-align: center;
 }
 
-.btn-paypal{
+.btn-paypal {
   width: 200px;
 }
