@@ -1,4 +1,4 @@
-#Descripción del proyecto
+# Descripción del proyecto
 
 
 Spanish/Español
@@ -9,6 +9,7 @@ English/Ingles
 
 This project is a Clothing Ecommerce web page, which includes a landing page, a catalog section, an individual product section, a log in and sign up section, a cart checkout section and a paypal component to pay the products.
 
+Project deployment: https://karen-vp-ecommerce.netlify.app
 
 # Getting Started with Create React App
 
