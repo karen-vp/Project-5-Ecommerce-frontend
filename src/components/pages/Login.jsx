@@ -6,12 +6,12 @@ import FormInput  from './../shared/FormInput'
 
 function Login() {
   const userCtx = useContext(UserContext)
-  const { loginUser, authStatus, verifyingToken, formData} = userCtx
+  const { loginUser, authStatus, verifyingToken, formData, getCurrentUser} = userCtx
 
   const navigate = useNavigate()
 
   useEffect(() => {
-    verifyingToken()
+    if(getCurrentUser()) verifyingToken()
 
     if (authStatus) {
       navigate('/',{ replace: true })

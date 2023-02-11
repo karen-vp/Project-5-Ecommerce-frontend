@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../../App.css';
 import React, { useContext, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import { AppContext } from './../../context/globalContext'
 import { CartContext } from './../../context/cartProvider'
 
@@ -30,7 +30,6 @@ function Product() {
             <Col sm={6}>{
               ok ? (<img src={oneProduct.singleProduct.img} className="img-fluid" alt={oneProduct.singleProduct.name} />)
                 : null}
-
           </Col>
           <Col sm="auto">
             {ok ? (Object.entries(oneProduct).map(([key, value]) => (

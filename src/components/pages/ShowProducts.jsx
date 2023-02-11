@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { CartContext } from './../../context/cartProvider'

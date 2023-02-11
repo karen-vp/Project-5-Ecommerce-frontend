@@ -6,8 +6,6 @@ export const UserProvider = ({ children }) => {
 
   const [user, setUser] = useState({ username: null, email: null })
   const [authStatus, setAuthStatus] = useState(false)
-  const [success, setSuccess] = useState(false)
-  const [error, setError] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,8 +17,14 @@ export const UserProvider = ({ children }) => {
     email: '',
   })
   const [editMode, setEditMode] = useState(false)
+  const [load, setLoad] = useState(false)
 
+  const getCurrentUser = ()=>{
+   const currentToken = localStorage.getItem('token') || ''
+   return currentToken
 
+  }
+ 
   const handleChange = (event) => {
     event.preventDefault()
     setFormData({
@@ -38,13 +42,13 @@ export const UserProvider = ({ children }) => {
 
   const registerUser = async (dataForm) => {
     try {
-      const res = await clienteAxios.post('/customers/signup', dataForm)
-      // localStorage.setItem('token', res.data.token)
-      // setAuthStatus(true)
-      setSuccess(true)
+      setLoad(true)
+     await clienteAxios.post('/customers/signup', dataForm)
+      setLoad(false)
+      
     } catch (error) {
+      setLoad(false)
       console.log(error)
-      setError(false)
     }
   }
 
@@ -55,7 +59,7 @@ export const UserProvider = ({ children }) => {
       email : dataForm.email
     }
     try {
-      const res = await clienteAxios.put('/customers/update', form)
+      await clienteAxios.put('/customers/update', form)
       verifyingToken()
 
     } catch (error) {
@@ -104,18 +108,17 @@ export const UserProvider = ({ children }) => {
     handleChange, 
     verifyingToken, 
     logout, 
-    setSuccess,
-    setError,
     setUser,
     updateUser,
     setUserData,
     handleChangeUpdate,
     setEditMode,
+    setLoad,
+    getCurrentUser,
+    load, 
     formData, 
     user, 
     authStatus, 
-    success,
-    error,
     editMode, 
     userData, 
     

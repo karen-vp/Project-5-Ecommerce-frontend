@@ -8,16 +8,16 @@ function Footer() {
      <div className="gridfooter-container">
             <div className="griditem-1">
                 <Link to={'/'}>
-                  {/* <img src="" alt="facebook" className="social-icons"> */}
+                  {/* <img src="" alt="facebook" className="social-icons"/> */}
                 </Link>
                 <Link to={'/'}>
-                    {/* <img src="" alt="instagram" className="social-icons"> */}
+                    {/* <img src="" alt="instagram" className="social-icons"/> */}
                  </Link>
                  <Link to={'/'}>
-                    {/* <img src="" alt="twitter" className="social-icons"> */}
+                    {/* <img src="" alt="twitter" className="social-icons"/> */}
                 </Link>
                 <Link to={'/'}>
-                    {/* <img src="" alt="github" className="social-icons"> */}
+                    {/* <img src="" alt="github" className="social-icons"/> */}
                 </Link>
             </div>
             <div className="griditem-2">

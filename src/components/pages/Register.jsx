@@ -1,46 +1,42 @@
-import React, { useContext, useEffect} from 'react'
+import React, { useContext } from 'react'
 import '../../App.css';
+import { useNavigate} from 'react-router-dom'
 import { UserContext } from './../../context/userContext'
-import FormInput  from '../shared/FormInput'
+import FormInput from '../shared/FormInput'
 
 
 function Register() {
     const userCtx = useContext(UserContext)
 
-    const { registerUser, formData, success, error} = userCtx
+    const { registerUser, formData, load, setLoad}  = userCtx
+
+    const navigate = useNavigate()
 
     const sendData = (event) => {
         event.preventDefault()
         registerUser(formData)
-        event.target.reset();
+        navigate('/login',{ replace: true })
     }
-
 
     return (
         <div className='center-container'>
-            <div className='form-container'>
+            {load ?
+            (<img src="https://cdn.dribbble.com/users/8424/screenshots/1036999/media/9df687212c8772ec6bebffdfc728a5f5.gif" alt="loading" className='img-collection'/>) 
+            :
+            (<div className='form-container'>
                 <h2>Crear cuenta</h2>
 
                 <form onSubmit={(e) => sendData(e)}>
                     <FormInput tipo='name' />
                     <FormInput tipo='email' />
-                    <FormInput  tipo='password' />
+                    <FormInput tipo='password' />
 
                     <button type='submit'>
                         Registrarme
                     </button>
                 </form>
-                {success && (
-                    <div className='alert alert-success m4' role='alert'>
-                        Se registro usuario con exito
-                    </div>
-                )}
-                {error && (
-                    <div className='alert alert-danger m4' role='alert'>
-                        Hubo un error creando usuario
-                    </div>
-                )}
             </div>
+            )}
         </div>
     )
 }

@@ -7,21 +7,18 @@ import ShowProducts from './ShowProducts'
 
 function Checkout() {
     const checkoutCtx = useContext(CartContext)
-    const { cart, addItemToCart, setCart } = checkoutCtx
+    const { cart, setCart } = checkoutCtx
 
     const userCtx = useContext(UserContext)
     const { authStatus } = userCtx
     const [amount, setAmount] = useState(0)
-    const [isShopping, setIsShopping] = useState(false)
 
     const setTotalAmount = () => {
         if (!cart?.length) {
             setAmount(0)
         }
         setAmount(cart.map(({ price, quantity }) => price * quantity).reduce((a, b) => a + b, 0))
-        
     }
-
     useEffect(() => {
             setTotalAmount()
     }, [cart])

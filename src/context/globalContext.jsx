@@ -30,8 +30,6 @@ export const AppProvider = ({ children }) => {
     }
   }
 
- 
-
 
   const data = {
     product,
